@@ -41,21 +41,16 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-- [Install Ruby] (https://www.ruby-lang.org/en/documentation/installation/)
+- [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 
 ### Usage
 
 To run the project, clone the repo using the following command:
 
-<code>git clone git@github.com:DJ-MrJay/oop-school-library.git</code>
-
+> <code>git clone git@github.com:DJ-MrJay/oop-school-library.git</code>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
 ## 👥 Authors <a name="authors"></a>
-
-👤 **Author**
 
 - GitHub: [@githubhandle](https://github.com/DJ-MrJay)
 - Twitter: [@twitterhandle](https://twitter.com/jonah_wambua)
@@ -78,3 +73,4 @@ I would like to thank Microverse for this educational project.
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
