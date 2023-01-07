@@ -42,7 +42,7 @@ class App
   end
 
   def list_books
-    if @books.length.zero?
+    if @books.empty?
       puts 'No books found'
     else
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
@@ -50,7 +50,7 @@ class App
   end
 
   def list_people
-    if @people.length.zero?
+    if @people.empty?
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
