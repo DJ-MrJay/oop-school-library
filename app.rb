@@ -41,26 +41,6 @@ class App
     puts options
   end
 
-  def options(input)
-    case input
-    when 1
-      list_books
-    when 2
-      list_people
-    when 3
-      create_person
-    when 4
-      create_book
-    when 5
-      create_rental
-    when 6
-      list_rentals
-    else
-      puts 'Thanks for using the school library! Now exiting...'
-      exit
-    end
-  end
-
   def list_books
     if @books.length.zero?
       puts 'No books found'
