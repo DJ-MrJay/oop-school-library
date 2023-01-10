@@ -18,7 +18,7 @@ def options(input)
   when 5
     create_rental
   when 6
-    display_rentals
+    list_rentals
   else
     exit_app(app)
   end
