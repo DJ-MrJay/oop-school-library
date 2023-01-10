@@ -61,9 +61,9 @@ class App
 
   def create_book
     print 'Title: '
-    title = gets.chomp
+    title = gets.chomp.split.map(&:capitalize).join(' ')
     print 'Author: '
-    author = gets.chomp
+    author = gets.chomp.split.map(&:capitalize).join(' ')
     book = Book.new(title, author)
     @books << book
     puts 'Book created successfully'
@@ -86,10 +86,10 @@ class App
 
   def create_student
     print 'Age: '
-    age = gets.chomp
+    age = gets.chomp.to_i
 
     print 'Name: '
-    name = gets.chomp.capitalize
+    name = gets.chomp.split.map(&:capitalize).join(' ')
 
     print 'Has parent\'s permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
@@ -99,13 +99,13 @@ class App
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp
+    age = gets.chomp.to_i
 
     print 'Name: '
-    name = gets.chomp.capitalize
+    name = gets.chomp.split.map(&:capitalize).join(' ')
 
     print 'Specialization: '
-    specialization = gets.chomp.downcase
+    specialization = gets.chomp.capitalize
 
     @people << Teacher.new(specialization, age, name)
   end
@@ -121,16 +121,31 @@ class App
     date = gets.chomp
     book = @books[selected_book]
     person = @people[selected_person]
-    rental_item = Rental.new(date, book, person)
+    rental_item = Rental.new
     @rentals << rental_item
     puts 'Rental created successfully'
   end
 
-  def list_rentals
+  # def list_rentals
+  #   print 'ID of person: '
+  #   id = gets.chomp.to_i
+  #   @rentals.each do |rental|
+  #     puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+  #   end
+  # end
+
+  def display_rentals
     print 'ID of person: '
-    id = gets.chomp.to_i
+    renter_id = gets.chomp
+    puts 'Rentals: '
+    list_rental_by_id #(renter_id.to_i)
+  end
+
+  def list_rental_by_id(renter_id)
     @rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+      if rental.person.id == renter_id
+        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      end
     end
   end
 end
