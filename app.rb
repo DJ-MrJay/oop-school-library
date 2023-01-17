@@ -16,6 +16,7 @@ class App
 
   def list_books
     if @books.empty?
+      puts
       puts 'No books found'
     else
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
@@ -24,6 +25,7 @@ class App
 
   def list_people
     if @people.empty?
+      puts
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
