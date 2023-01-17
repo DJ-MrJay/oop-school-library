@@ -14,33 +14,6 @@ class App
     @rentals = []
   end
 
-  def entry_point
-    puts 'Welcome to School Library App!'
-
-    loop do
-      app_options
-      app_choice = gets.chomp.to_i
-      break if app_choice == 7
-
-      options(app_choice)
-    end
-  end
-
-  def app_options
-    puts ''
-    puts 'Please choose an option by entering a number:'
-    options = [
-      '1 - List all books',
-      '2 - List all people',
-      '3 - Create a person',
-      '4 - Create a book',
-      '5 - Create a rental',
-      '6 - List all rentals for a given person id',
-      '7 - Exit'
-    ]
-    puts options
-  end
-
   def list_books
     if @books.empty?
       puts 'No books found'
@@ -79,9 +52,8 @@ class App
       create_teacher
     else
       puts 'Invalid Entry'
+      nil
     end
-
-    puts 'Person Created Successfully'
   end
 
   def create_student
@@ -95,6 +67,8 @@ class App
     parent_permission = gets.chomp.downcase == 'y'
 
     @people << Student.new(@classroom, age, name, parent_permission: parent_permission)
+    puts
+    puts 'Student created successfully'
   end
 
   def create_teacher
@@ -108,6 +82,8 @@ class App
     specialization = gets.chomp.capitalize
 
     @people << Teacher.new(specialization, age, name)
+    puts
+    puts 'Teacher created successfully'
   end
 
   def create_rental
