@@ -1,7 +1,7 @@
-require_relative './start'
+require_relative './run'
 
 def main
-  start = Start.new
+  start = Run.new
   start.entry_point
 end
 
