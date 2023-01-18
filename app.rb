@@ -38,7 +38,7 @@ class App
     print 'Author: '
     author = gets.chomp.split.map(&:capitalize).join(' ')
     book = Book.new(title, author)
-    @books << book
+    books << book
     puts 'Book created successfully'
   end
 
@@ -100,7 +100,7 @@ class App
     book = @books[selected_book]
     person = @people[selected_person]
     rental_item = Rental.new(date, book, person)
-    @rentals << rental_item
+    rentals << rental_item
     puts 'Rental created successfully'
   end
 
