@@ -40,7 +40,7 @@ class App
     print 'Author: '
     author = gets.chomp.split.map(&:capitalize).join(' ')
     book = Book.new(title, author)
-    @books << book
+    books << book
     puts 'Book created successfully'
   end
 
@@ -68,7 +68,8 @@ class App
     print 'Has parent\'s permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
 
-    @people << Student.new(@classroom, age, name, parent_permission: parent_permission)
+    student = Student.new(age, name, parent_permission: parent_permission)
+    people << student
     puts
     puts 'Student created successfully'
   end
@@ -83,7 +84,8 @@ class App
     print 'Specialization: '
     specialization = gets.chomp.capitalize
 
-    @people << Teacher.new(specialization, age, name)
+    teacher = Teacher.new(specialization, age, name)
+    people << teacher
     puts
     puts 'Teacher created successfully'
   end
@@ -100,7 +102,7 @@ class App
     book = @books[selected_book]
     person = @people[selected_person]
     rental_item = Rental.new
-    @rentals << rental_item
+    rentals << rental_item
     puts 'Rental created successfully'
 
     [date, book, person]
@@ -108,12 +110,11 @@ class App
 
   def list_rentals
     print 'ID of person: '
-    renter_id = gets.chomp
+    id = gets.chomp.to_i
     puts 'Rentals: '
     @rentals.each do |rental|
-      if rental.person.id == renter_id
-        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
-      end
+      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if
+      rental.person.id == id
     end
   end
 end
