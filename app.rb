@@ -4,14 +4,18 @@ require_relative './teacher'
 require_relative './classroom'
 require_relative './book'
 require_relative './rental'
+require_relative './io'
 
 class App
   attr_accessor :books, :people, :rentals
 
+  include SaveData
+  include LoadData
+
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
   end
 
   def list_books
