@@ -28,6 +28,7 @@ class Run
     7 - Exit"
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def options(input)
     case input
     when 1
@@ -49,4 +50,5 @@ class Run
       puts 'Invalid Entry'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end

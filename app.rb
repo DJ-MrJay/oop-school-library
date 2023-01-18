@@ -15,7 +15,7 @@ class App
   end
 
   def list_books
-    if @books.length.zero?
+    if @books.empty?
       puts 'No books found'
     else
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
@@ -23,7 +23,7 @@ class App
   end
 
   def list_people
-    if @people.length.zero?
+    if @people.empty?
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
@@ -57,6 +57,7 @@ class App
     else
       puts 'Invalid Entry'
     end
+    puts 'Person Created Successfully'
   end
 
   def create_student
@@ -70,7 +71,7 @@ class App
     parent_permission = gets.chomp.downcase == 'y'
 
     student_item = Student.new(@classroom, age, name, parent_permission: parent_permission)
-    @people << student_item
+    people << student_item
   end
 
   def create_teacher
@@ -84,7 +85,7 @@ class App
     specialization = gets.chomp.downcase
 
     teacher_item = Teacher.new(specialization, age, name)
-    @people << teacher_item
+    people << teacher_item
   end
 
   def create_rental
