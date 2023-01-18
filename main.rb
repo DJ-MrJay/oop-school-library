@@ -1,8 +1,8 @@
 require_relative './run'
 
 def main
-  start = Run.new
-  start.entry_point
+  run = Run.new
+  run.entry_point
 end
 
 main

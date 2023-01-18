@@ -11,29 +11,22 @@ class Run
     loop do
       app_options
       app_choice = gets.chomp.to_i
-      break if app_choice == 7
-
       options(app_choice)
     end
   end
 
   def app_options
-    puts
+    puts 
     puts 'Please choose an option by entering a number:'
-    options = [
-      '1 - List all books',
-      '2 - List all people',
-      '3 - Create a person',
-      '4 - Create a book',
-      '5 - Create a rental',
-      '6 - List all rentals for a given person id',
-      '7 - Exit'
-    ]
-    puts
-    puts options
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rental for a given person id'
+    puts '7 - Exit'
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def options(input)
     case input
     when 1
@@ -53,8 +46,6 @@ class Run
       exit
     else
       puts 'Invalid Entry'
-      puts 'Please enter a number between 1 and 7'
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 end

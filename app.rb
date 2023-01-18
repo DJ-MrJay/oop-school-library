@@ -15,8 +15,7 @@ class App
   end
 
   def list_books
-    if @books.empty?
-      puts
+    if @books.length.zero?
       puts 'No books found'
     else
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
@@ -24,8 +23,7 @@ class App
   end
 
   def list_people
-    if @people.empty?
-      puts
+    if @people.length.zero?
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
@@ -40,13 +38,17 @@ class App
     print 'Author: '
     author = gets.chomp.split.map(&:capitalize).join(' ')
     book = Book.new(title, author)
-    books << book
+    @books << book
     puts 'Book created successfully'
   end
 
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     num_input = gets.chomp.to_i
+    person_option(num_input)
+  end
+
+  def person_option(num_input)
     case num_input
     when 1
       create_student
@@ -54,13 +56,12 @@ class App
       create_teacher
     else
       puts 'Invalid Entry'
-      nil
     end
   end
 
   def create_student
     print 'Age: '
-    age = gets.chomp.to_i
+    age = gets.chomp
 
     print 'Name: '
     name = gets.chomp.split.map(&:capitalize).join(' ')
@@ -68,26 +69,22 @@ class App
     print 'Has parent\'s permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
 
-    student = Student.new(age, name, parent_permission: parent_permission)
-    people << student
-    puts
-    puts 'Student created successfully'
+    student_item = Student.new(@classroom, age, name, parent_permission: parent_permission)
+    @people << student_item
   end
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp.to_i
+    age = gets.chomp
 
     print 'Name: '
     name = gets.chomp.split.map(&:capitalize).join(' ')
 
     print 'Specialization: '
-    specialization = gets.chomp.capitalize
+    specialization = gets.chomp.downcase
 
-    teacher = Teacher.new(specialization, age, name)
-    people << teacher
-    puts
-    puts 'Teacher created successfully'
+    teacher_item = Teacher.new(specialization, age, name)
+    @people << teacher_item
   end
 
   def create_rental
@@ -101,20 +98,16 @@ class App
     date = gets.chomp
     book = @books[selected_book]
     person = @people[selected_person]
-    rental_item = Rental.new
-    rentals << rental_item
+    rental_item = Rental.new(date, book, person)
+    @rentals << rental_item
     puts 'Rental created successfully'
-
-    [date, book, person]
   end
 
   def list_rentals
     print 'ID of person: '
     id = gets.chomp.to_i
-    puts 'Rentals: '
     @rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if
-      rental.person.id == id
+      puts %(Date: #{rental.date}, Book: "#{rental.book.title}" by #{rental.book.author}) if rental.person.id == id
     end
   end
 end

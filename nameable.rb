@@ -19,7 +19,7 @@ end
 
 class CapitalizeDecorator < BaseDecorator
   def correct_name
-    @nameable.correct_name.split.map(&:capitalize).join(' ')
+    @nameable.correct_name.capitalize
   end
 end
 
