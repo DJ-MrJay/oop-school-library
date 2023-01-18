@@ -49,6 +49,13 @@ To run the project, clone the repo using the following command:
 - Twitter: [@twitterhandle](https://twitter.com/jonah_wambua)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jonah-wambua/)
 
+👤 **Selma Hamutenya**
+
+- GitHub: [@SelmaNdapanda](https://github.com/SelmaNdapanda)
+- Twitter: [@SellohBlaq](https://twitter.com/sellohBlaq)
+- LinkedIn: [selma-hamutenya](www.linkedin.com/in/selma-hamutenya)
+
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!

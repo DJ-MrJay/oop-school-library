@@ -1,5 +1,4 @@
 require_relative './nameable'
-require './rental'
 
 class Person < Nameable
   attr_accessor :id, :rentals
@@ -7,7 +6,7 @@ class Person < Nameable
 
   def initialize(age, name, parent_permission)
     super()
-    @id = Random.rand(1..500)
+    @id = Random.rand(1..99)
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -18,14 +17,6 @@ class Person < Nameable
     @name
   end
 
-  private
-
-  def of_age?
-    return true if @age >= 18
-
-    false
-  end
-
   def can_use_services?
     @parent_permission || of_age?
 
@@ -34,5 +25,13 @@ class Person < Nameable
 
   def add_rental(price)
     @rentals << price
+  end
+
+  private
+
+  def of_age?
+    return true if @age >= 18
+
+    false
   end
 end
