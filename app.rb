@@ -13,7 +13,7 @@ class App
   include LoadData
 
   def initialize
-    @books = load_books
+    @books = []
     @people = load_people
     @rentals = load_rentals
   end
