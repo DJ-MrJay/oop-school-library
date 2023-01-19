@@ -1,6 +1,11 @@
+require_relative './io'
 require_relative './app'
 
 class Run
+
+  include SaveData
+  include LoadData
+
   def initialize
     @app = App.new
   end
@@ -44,7 +49,8 @@ class Run
     when 6
       @app.list_rentals
     when 7
-      puts 'Thanks for using the school library!'
+      save
+      puts 'Thanks for using the school library App!'
       exit
     else
       puts 'Invalid Entry'
