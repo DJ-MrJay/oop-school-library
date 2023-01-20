@@ -2,16 +2,17 @@ require './book'
 require './person'
 
 class Rental
-  attr_accessor :date, :book, :person
+  attr_accessor :date, :book, :person, :rentals
   attr_reader :id
 
-  def initialize(date, book, person)
+  def initialize(person, book, date)
     @date = date
-    @person = person
-    @book = book
 
-    book.rentals << self
-    person.rentals << self
+    @person = person
+    person&.rentals&.push(self)
+
+    @book = book
+    book&.rentals&.push(self)
   end
 
   def to_json(*args)

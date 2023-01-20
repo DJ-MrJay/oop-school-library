@@ -2,7 +2,6 @@ require_relative './io'
 require_relative './app'
 
 class Run
-
   include SaveData
   include LoadData
 
