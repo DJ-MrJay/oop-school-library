@@ -40,7 +40,7 @@ module LoadData
       data = File.read('./storage_files/books.json')
       if data != ''
         JSON.parse(data).map do |book|
-          books.push(Book.new(book['title'], book['author'], book['id']))
+          books.push(Book.new(book['title'], book['author']))
         end
       end
     end

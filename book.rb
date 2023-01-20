@@ -4,7 +4,7 @@ class Book
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
-    @id = Random.rand(1..100)
+    # @id = Random.rand(1..100)
     @title = title
     @author = author
     @rentals = []
