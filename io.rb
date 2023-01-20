@@ -6,7 +6,7 @@ require_relative 'teacher'
 
 module SaveData
   def save_books
-    books_data = []
+    # books_data = []
     return unless File.exist?('./storage_files/books.json')
     return unless @books.any?
 
@@ -15,7 +15,7 @@ module SaveData
   end
 
   def save_people
-    people_data = []
+    # people_data = []
     return unless File.exist?('./storage_files/people.json')
     return unless @people.any?
 
@@ -24,7 +24,7 @@ module SaveData
   end
 
   def save_rentals
-    rentals_data = []
+    # rentals_data = []
     return unless File.exist?('./storage_files/rentals.json')
     return unless @rentals.any?
 
