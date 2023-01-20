@@ -19,7 +19,9 @@ class App
   end
 
   def list_books
+    load_books
     if @books.empty?
+      puts
       puts 'No books found'
     else
       @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
@@ -28,6 +30,7 @@ class App
 
   def list_people
     if @people.empty?
+      puts
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
@@ -43,11 +46,13 @@ class App
     author = gets.chomp.split.map(&:capitalize).join(' ')
     book = Book.new(title, author)
     books << book
+    puts
     puts 'Book created successfully'
+    save_books
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    print 'Do you want to create (1) a student or (2) a teacher? [Input the number]: '
     num_input = gets.chomp.to_i
     person_option(num_input)
   end
@@ -61,7 +66,6 @@ class App
     else
       puts 'Invalid Entry'
     end
-    puts 'Person Created Successfully'
   end
 
   def create_student
@@ -76,6 +80,9 @@ class App
 
     student_item = Student.new(@classroom, age, name, parent_permission: parent_permission)
     people << student_item
+    save_people
+    puts
+    puts 'Student created successfully'
   end
 
   def create_teacher
@@ -90,6 +97,9 @@ class App
 
     teacher_item = Teacher.new(specialization, age, name)
     people << teacher_item
+    save_people
+    puts
+    puts 'Teacher created successfully'
   end
 
   def create_rental
@@ -105,6 +115,8 @@ class App
     person = @people[selected_person]
     rental_item = Rental.new(date, book, person)
     rentals << rental_item
+    save_rentals
+    puts
     puts 'Rental created successfully'
   end
 

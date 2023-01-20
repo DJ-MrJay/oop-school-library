@@ -8,7 +8,7 @@ module SaveData
   def save_books
     books_data = []
     return unless File.exist?('./storage_files/books.json')
-    # return unless @books.any?
+    return unless @books.any?
 
     books_data = JSON.generate(@books, { max_nesting: false })
     File.write('./storage_files/books.json', books_data)
@@ -17,7 +17,7 @@ module SaveData
   def save_people
     people_data = []
     return unless File.exist?('./storage_files/people.json')
-    # return unless @people.any?
+    return unless @people.any?
 
     people_data = JSON.generate(@people, { max_nesting: false })
     File.write('./storage_files/people.json', people_data)
@@ -26,16 +26,10 @@ module SaveData
   def save_rentals
     rentals_data = []
     return unless File.exist?('./storage_files/rentals.json')
-    # return unless @rentals.any?
+    return unless @rentals.any?
 
     rentals_data = JSON.generate(@rentals, { max_nesting: false })
     File.write('./storage_files/rentals.json', rentals_data)
-  end
-
-  def save()
-    save_books
-    save_people
-    save_rentals
   end
 end
 
