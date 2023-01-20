@@ -1,1 +1,4 @@
+<<<<<<< HEAD
 [{"json_class":"Student","id":{"parent_permission":true},"name":"12","age":null,"parent_permission":"Bubu"},{"json_class":"Teacher","id":"55","name":515,"age":"science","specialization":"Selma"}]
+=======
+>>>>>>> b8e832aa4d7b001051e2e761a21f0fd3d54e1171
