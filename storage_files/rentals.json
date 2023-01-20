@@ -1,1 +1,0 @@
-[{"json_class":"Rental","date":"12/12/2022","book":{"json_class":"Book","id":null,"title":"Over There","author":"Selma"},"person":{"json_class":"Teacher","id":69,"name":"Jonah","age":"44","specialization":"math"}}]
