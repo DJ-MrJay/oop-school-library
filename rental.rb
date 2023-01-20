@@ -6,10 +6,10 @@ class Rental
     @date = date
 
     @person = person
-    person&.rentals&.push(self)
+    person&.rentals.push(self)
 
     @book = book
-    book&.rentals&.push(self)
+    book.rentals.push(self)
   end
 
   def to_json(*args)

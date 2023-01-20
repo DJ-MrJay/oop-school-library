@@ -4,7 +4,7 @@ class Teacher < Person
   attr_reader :specialization
 
   def initialize(name, age, specialization, id = Random.rand(1..1000))
-    super(name, age, id)
+    super(age, name, id)
     @specialization = specialization
   end
 

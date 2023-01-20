@@ -34,7 +34,7 @@ class App
       puts 'No people found'
     else
       @people.each_with_index do |person, index|
-        puts "#{index}) Name: #{person.name}, Age: #{person.age}, ID: #{person.id}"
+        puts "#{index})- [#{person.class}] Age: #{person.age}, Name: #{person.name}, ID: #{person.id}"
       end
     end
   end
@@ -78,7 +78,7 @@ class App
     print 'Has parent\'s permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
 
-    student_item = Student.new(@classroom, age, name, parent_permission: parent_permission)
+    student_item = Student.new(age, name, parent_permission: parent_permission)
     people << student_item
     save_people
     puts
@@ -95,7 +95,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp.downcase
 
-    teacher_item = Teacher.new(specialization, age, name)
+    teacher_item = Teacher.new(age, name, specialization)
     people << teacher_item
     save_people
     puts
@@ -113,8 +113,8 @@ class App
     date = gets.chomp
     book = @books[selected_book]
     person = @people[selected_person]
-    rental_item = Rental.new(date, book, person)
-    rentals << rental_item
+    rental = Rental.new(person, book, date)
+    rentals << rental
     save_rentals
     puts
     puts 'Rental created successfully'

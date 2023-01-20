@@ -1,1 +1,1 @@
-[{"json_class":"Student","id":{"parent_permission":true},"name":"12","age":null,"parent_permission":"Bubu"},{"json_class":"Teacher","id":"55","name":515,"age":"science","specialization":"Selma"}]
+[{"json_class":"Student","id":899,"name":"Bubu","age":"11","parent_permission":{"parent_permission":true}}]

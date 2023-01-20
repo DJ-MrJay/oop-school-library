@@ -54,9 +54,9 @@ module LoadData
       if data != ''
         JSON.parse(data).map do |person|
           if person['json_class'] == 'Student'
-            people.push(Student.new(person['age'], person['name'], person['parent_permission']))
+            people.push(Student.new(person['name'], person['age'], person['parent_permission'], person['id']))
           else
-            people.push(Teacher.new(person['age'], person['name'], person['parent_permission']))
+            people.push(Teacher.new( person['name'], person['age'], person['specialization'], person['id']))
           end
         end
       end
@@ -70,9 +70,9 @@ module LoadData
       data = File.read('./storage_files/rentals.json')
       if data != ''
         JSON.parse(data).map do |rental|
-          person_id = rental['person']['id']
-          book_id = rental['book']['id']
-          s = Rental.new(rental['date'], get_book(book_id), get_person(person_id))
+          selected_person = rental['person']['id']
+          selected_book = rental['book']['id']
+          s = Rental.new(rental['date'], get_book(selected_book), get_person(selected_person))
           rentals.push(s)
         end
       end
