@@ -56,7 +56,7 @@ module LoadData
           if person['json_class'] == 'Student'
             people.push(Student.new(person['name'], person['age'], person['parent_permission'], person['id']))
           else
-            people.push(Teacher.new( person['name'], person['age'], person['specialization'], person['id']))
+            people.push(Teacher.new(person['name'], person['age'], person['specialization'], person['id']))
           end
         end
       end
