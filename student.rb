@@ -10,7 +10,7 @@ class Student < Person
     @json_class = json_class
   end
 
-  def classroom=(classroom)
+  def classrooms=(classroom)
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end

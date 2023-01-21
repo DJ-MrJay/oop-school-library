@@ -107,11 +107,11 @@ class App
 
   def create_rental
     puts 'Select a book from the following list by number'
-    list_books 
+    list_books
     selected_book = gets.chomp.to_i
     book = @books[selected_book]
     puts 'Select a person from the following list by number'
-    list_people 
+    list_people
     selected_person = gets.chomp.to_i
     person = @people[selected_person]
     print 'Date (DD/MM/YYYY): '
@@ -124,17 +124,18 @@ class App
   end
 
   def list_rentals
-    print 'ID of person: '
-    id = gets.chomp.to_i
-    puts 'Rentals:'
-    # @rentals.each do |rental|
-    #   puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
-    # end
-    @people.each do |person|
-      next unless rental.person.id == id
-
-      person.rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+    if @rentals.empty?
+      puts "\n No rental mode"
+    else
+      print 'ID of person: '
+      person_id = gets.chomp.to_i
+      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+      if person_rentals.empty?
+        puts "\n ❌ Person ID not found ❌"
+      else
+        person_rentals.each do |list|
+          puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
+        end
       end
     end
   end
