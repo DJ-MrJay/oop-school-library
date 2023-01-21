@@ -47,8 +47,8 @@ module SaveData
       rental_prop = {
         date: rental.date,
         title: rental.book.title, author: rental.book.author,
-        id: rental.person.id, name: rental.person.name, age: rental.person.age
-        # type: rental.person.json_class
+        id: rental.person.id, name: rental.person.name, age: rental.person.age,
+        type: rental.person.json_class
       }
       if rental.person.json_class == 'Student'
         rental_prop[:classroom] = rental.person.classroom
