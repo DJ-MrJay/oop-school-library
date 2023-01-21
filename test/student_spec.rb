@@ -1,5 +1,6 @@
 require_relative '../student'
 require_relative '../classroom'
+
 describe Student do
   before :each do
     @student = Student.new '5', 60, 'Reasons'

@@ -1,3 +1,5 @@
+require_relative '../teacher'
+
 describe Teacher do
   before :each do
     @teacher = Teacher.new 45, 'Time Travel', 'Selma'
