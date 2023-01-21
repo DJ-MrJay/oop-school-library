@@ -75,10 +75,13 @@ class App
     print 'Name: '
     name = gets.chomp.split.map(&:capitalize).join(' ')
 
+    print 'Classroom: '
+    classroom = gets.chomp.upcase
+
     print 'Has parent\'s permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
 
-    student_item = Student.new(age, name, parent_permission: parent_permission)
+    student_item = Student.new(classroom, age, name, parent_permission: parent_permission)
     people << student_item
     save_people
     puts
@@ -95,7 +98,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp.downcase
 
-    teacher_item = Teacher.new(age, name, specialization)
+    teacher_item = Teacher.new(age, specialization, name)
     people << teacher_item
     save_people
     puts
@@ -104,18 +107,18 @@ class App
 
   def create_rental
     puts 'Select a book from the following list by number'
-    list_books
+    list_books 
     selected_book = gets.chomp.to_i
+    book = @books[selected_book]
     puts 'Select a person from the following list by number'
-    list_people
+    list_people 
     selected_person = gets.chomp.to_i
+    person = @people[selected_person]
     print 'Date (DD/MM/YYYY): '
     date = gets.chomp
-    book = @books[selected_book]
-    person = @people[selected_person]
-    rental = Rental.new(person, book, date)
-    rentals << rental
-    save_rentals
+    rental = Rental.new(date, book, person)
+    @rentals << rental
+    save_rentals(@rentals)
     puts
     puts 'Rental created successfully'
   end
@@ -123,8 +126,16 @@ class App
   def list_rentals
     print 'ID of person: '
     id = gets.chomp.to_i
-    @rentals.each do |rental|
-      puts %(Date: #{rental.date}, Book: "#{rental.book.title}" by #{rental.book.author}) if rental.person.id == id
+    puts 'Rentals:'
+    # @rentals.each do |rental|
+    #   puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    # end
+    @people.each do |person|
+      next unless rental.person.id == id
+
+      person.rentals.each do |rental|
+        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+      end
     end
   end
 end

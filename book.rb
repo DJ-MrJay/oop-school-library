@@ -14,12 +14,12 @@ class Book
     Rental.new(date, self, person)
   end
 
-  def to_json(*args)
-    {
-      JSON.create_id => self.class.name,
-      'id' => @id,
-      'title' => @title,
-      'author' => @author
-    }.to_json(*args)
-  end
+  # def to_json(*args)
+  #   {
+  #     JSON.create_id => self.class.name,
+  #     'id' => @id,
+  #     'title' => @title,
+  #     'author' => @author
+  #   }.to_json(*args)
+  # end
 end

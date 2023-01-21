@@ -1,23 +1,25 @@
 class Rental
-  attr_accessor :date, :book, :person, :rentals
-  attr_reader :id
+  attr_accessor :date, :book, :person
+  attr_reader :rentals
 
-  def initialize(person, book, date)
+  def initialize(date, person, book)
     @date = date
 
     @person = person
-    person&.rentals&.push(self)
+    person.rentals << self
+    # person&.rentals.push(self)
 
     @book = book
-    book.rentals.push(self)
+    book.rentals << self
+    # book&.rentals.push(self)
   end
 
-  def to_json(*args)
-    {
-      JSON.create_id => self.class.name,
-      'date' => @date,
-      'book' => @book,
-      'person' => @person
-    }.to_json(*args)
-  end
+  # def to_json(*args)
+  #   {
+  #     JSON.create_id => self.class.name,
+  #     'date' => @date,
+  #     'book' => @book,
+  #     'person' => @person
+  #   }.to_json(*args)
+  # end
 end

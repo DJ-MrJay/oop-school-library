@@ -1,1 +1,6 @@
-[{"json_class":"Book","id":371,"title":"Game Of Thrones","author":"Selma"}]
+[
+  {
+    "title": "Game Of Thrones",
+    "author": "Selma"
+  }
+]

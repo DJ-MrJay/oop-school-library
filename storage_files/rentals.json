@@ -1,1 +1,1 @@
-[{"json_class":"Rental","date":"20/01/2023","book":{"json_class":"Book","id":371,"title":"Game Of Thrones","author":"Selma"},"person":{"json_class":"Student","id":899,"name":"Bubu","age":"11","parent_permission":{"parent_permission":true}}}]
+[]

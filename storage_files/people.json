@@ -1,1 +1,48 @@
-[{"json_class":"Student","id":899,"name":"Bubu","age":"11","parent_permission":{"parent_permission":true}}]
+[
+  {
+    "id": 768,
+    "name": "Peter",
+    "age": "11",
+    "json_class": "Student",
+    "classroom": "12",
+    "parent_permission": true
+  },
+  {
+    "id": 145,
+    "name": "Selma",
+    "age": "44",
+    "json_class": "Teacher",
+    "specialization": "art"
+  },
+  {
+    "id": 178,
+    "name": "Visto",
+    "age": "18",
+    "json_class": "Student",
+    "classroom": "2",
+    "parent_permission": true
+  },
+  {
+    "id": 391,
+    "name": "Hello",
+    "age": "12",
+    "json_class": "Student",
+    "classroom": "6",
+    "parent_permission": true
+  },
+  {
+    "id": 690,
+    "name": "Selma",
+    "age": "56",
+    "json_class": "Teacher",
+    "specialization": "pe"
+  },
+  {
+    "id": 155,
+    "name": "Hii",
+    "age": "14",
+    "json_class": "Student",
+    "classroom": "13",
+    "parent_permission": false
+  }
+]
