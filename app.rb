@@ -96,7 +96,7 @@ class App
     name = gets.chomp.split.map(&:capitalize).join(' ')
 
     print 'Specialization: '
-    specialization = gets.chomp.downcase
+    specialization = gets.chomp.split.map(&:capitalize).join(' ')
 
     teacher_item = Teacher.new(age, specialization, name)
     people << teacher_item
@@ -131,7 +131,7 @@ class App
       person_id = gets.chomp.to_i
       person_rentals = @rentals.select { |rental| rental.person.id == person_id }
       if person_rentals.empty?
-        puts "\n ❌ Person ID not found ❌"
+        puts "\n Person ID not found"
       else
         person_rentals.each do |list|
           puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
