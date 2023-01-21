@@ -1,6 +1,10 @@
+require_relative './io'
 require_relative './app'
 
 class Run
+  include SaveData
+  include LoadData
+
   def initialize
     @app = App.new
   end
@@ -17,15 +21,14 @@ class Run
 
   def app_options
     puts
-    puts "
-    Please choose an option by entering a number:
-    1 - List all books
-    2 - List all people
-    3 - Create a person
-    4 - Create a book
-    5 - Create a rental
-    6 - List all rental for a given person id
-    7 - Exit"
+    puts 'Please choose an option by entering a number:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rental for a given person id'
+    puts '7 - Exit'
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -44,7 +47,7 @@ class Run
     when 6
       @app.list_rentals
     when 7
-      puts 'Thanks for using the school library!'
+      puts 'Thanks for using the school library App!'
       exit
     else
       puts 'Invalid Entry'

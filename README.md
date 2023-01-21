@@ -45,15 +45,17 @@ To run the project, clone the repo using the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-- GitHub: [@githubhandle](https://github.com/DJ-MrJay)
-- Twitter: [@twitterhandle](https://twitter.com/jonah_wambua)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jonah-wambua/)
+👤 **Jonah Wambua**
+
+- GitHub [link](https://github.com/DJ-MrJay)
+- Twitter [link](https://twitter.com/jonah_wambua)
+- LinkedIn [link](https://www.linkedin.com/in/jonah-wambua/)
 
 👤 **Selma Hamutenya**
 
-- GitHub: [@SelmaNdapanda](https://github.com/SelmaNdapanda)
-- Twitter: [@SellohBlaq](https://twitter.com/sellohBlaq)
-- LinkedIn: [selma-hamutenya](www.linkedin.com/in/selma-hamutenya)
+- GitHub [link](https://github.com/SelmaNdapanda)
+- Twitter [link](https://twitter.com/sellohBlaq)
+- LinkedIn [link](www.linkedin.com/in/selma-hamutenya)
 
 
 ## 🤝 Contributing <a name="contributing"></a>

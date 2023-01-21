@@ -1,0 +1,22 @@
+[
+  {
+    "date": "21/01/2023",
+    "title": "Game Of Thrones",
+    "author": "Selma",
+    "id": 768,
+    "name": "Peter",
+    "age": "11",
+    "type": "Student",
+    "classroom": "12"
+  },
+  {
+    "date": "21/01/2023",
+    "title": "Game Of Thrones",
+    "author": "Selma",
+    "id": 145,
+    "name": "Selma",
+    "age": "44",
+    "type": "Teacher",
+    "specialization": "art"
+  }
+]
