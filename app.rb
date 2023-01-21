@@ -125,13 +125,13 @@ class App
 
   def list_rentals
     if @rentals.empty?
-      puts "\n No rental mode"
+      puts "No rental mode"
     else
       print 'ID of person: '
       person_id = gets.chomp.to_i
       person_rentals = @rentals.select { |rental| rental.person.id == person_id }
       if person_rentals.empty?
-        puts "\n Person ID not found"
+        puts "Person ID not found"
       else
         person_rentals.each do |list|
           puts "Date: #{list.date}, Books: #{list.book.title} written by Author: #{list.book.author}"
